@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SSA</title>
+
+    <!-- Importação dos arquivos CSS -->
+    <link rel="stylesheet" href="/static/css/reset.css">
+    <!-- <link rel="stylesheet" href="/src/css/signup.css"> -->
+    <link rel="stylesheet" href="/static/css/style.css">
+
+    <!-- Boxicons CSS -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body>
+    <!-- Formulario Cadastrar Usuário -->
+    <section class="container forms" id="container">
+    <div class="form signup">
+        <div class="form-content">
+            <!-- Importando o logo SSA -->
+            <div class="logo">
+                <img src="/static/css/SSA.png" alt="Sistema de Suporte Administrativo">
+            </div>
+            <!-- Seção de Cabeçalho -->
+            <header>Cadastrar Usuário</header>
+            <!-- Iniciando o formulário -->
+            <!-- Iniciando o formulário -->
+                <form method="POST" action="{{ url_for('registrar') }}">
+                    <div class="field input-field">
+                        <!-- Campo de entrada Nome -->
+                        <input type="text" placeholder="Nome" class="input" name="nome" required>
+                    </div>
+
+                    <div class="field input-field">
+                        <!-- Campo de entrada Data de Nascimento-->
+                        <input type="date" placeholder="Data de Nascimento" class="password" id="data" name="dn" required>
+                    </div>
+
+                    <div class="field input-field">
+                        <!-- Campo de entrada Cargo ou Função -->
+                        <input type="text" placeholder="Cargo" class="input" id="cargo" name="cargo" required>
+                    </div>
+
+                    <div class="field input-field">
+                        <!-- Campo de entrada CPF -->
+                        <input type="number" placeholder="CPF" class="input" name="cpf" required>
+                    </div>
+
+                    <div class="field input-field">
+                        <!-- Campo de entrada Sexo -->
+                        <input type="text" placeholder="Sexo" class="input" name="sexo" required>
+                    </div>
+
+                    <div class="field input-field">
+                        <!-- Campo de entrada Logradouro -->
+                        <input type="text" placeholder="Logradouro" class="input" name="logradouro" required>
+                    </div>
+
+                    <div class="field input-field">
+                        <!-- Campo de entrada CEP -->
+                        <input type="number" placeholder="CEP" class="input" name="cep" required>
+                    </div>
+
+                    <div class="field input-field">
+                        <!-- Campo de entrada Numero -->
+                        <input type="number" placeholder="Numero" class="input" name="numero" required>
+                    </div>
+
+                    <div class="field input-field">
+                        <!-- Campo de entrada Numero -->
+                        <input type="password" placeholder="Senha" class="input" name="senha" required>
+                    </div>
+
+                    <div class="field button-field">
+                        <!-- Campo Botão Cadastra-se -->
+                        <button type="submit">Registrar</button>
+                    </div>
+                    <!-- Linha -->
+                    <div class="line"></div>
+                </form>
+
+
+            <div class="form-link">
+                <!-- Link para fazer login -->
+                <span>Já tem uma conta? <a href="/" class="login-link">Entrar</a></span>
+            </div>
+        </div>
+
+    </div>
+    </section>
+</body>
+
+</html>

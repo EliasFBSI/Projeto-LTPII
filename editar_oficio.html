@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Ofício</title>
+
+    <!-- CSS -->
+    <!-- <link rel="stylesheet" href="/src/css/style.css"> -->
+    <link rel="stylesheet" href="/static/css/reset.css">
+    <link rel="stylesheet" href="/static/css/sidebar.css">
+    <link rel="stylesheet" href="/static/css/style.css">
+
+    <!-- Icons -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+<section class="home">
+        <header>
+        <div class="logo">
+                <img src="/static/css/SSA.png" alt="">
+        </div>
+        <!-- <div class="title">
+            <h1>GERADOR DE NÚMEROS DE OFÍCIOS</h1>
+        </div> -->
+
+        </header>
+    </section>
+    <nav id="menu">
+        <ul>
+            <li>
+                <a href="sidebar" class="ssa-logo">
+                    <img src="/static/css/SSA.png" alt="">
+                    <span class="nav-item">SSA</span>
+                </a>
+            </li>
+            <li><a href="#">
+                <i class='bx bx-home-alt-2'></i>
+                <span class="nav-item">Home</span>
+            </a></li>
+            <li><a href="/gerar_oficio">
+                <i class='bx bx-add-to-queue'></i>
+                <span class="nav-item">Gerar</span>
+            </a></li>
+            <li><a href="/search_oficios">
+                <i class='bx bx-search'></i>
+                <span class="nav-item">Consultar</span>
+            </a></li>
+            <li><a href="/" class="logout">
+                <i class='bx bx-log-out'></i>
+                <span class="nav-item">Sair</span>
+            </a></li>
+        </ul>
+    </nav>
+
+
+<body>
+<section class="container forms">
+    <div class="form login">
+        <div class="form-content">
+            <header>
+                <div class="logo">
+                    <img src="/static/css/SSA.png" alt="">
+                </div>
+            </header>
+            <!-- Seção de Cabeçalho -->
+            <header>Editar Oficio</header>
+            <form method="POST" action="{{ url_for('editar_oficio', id=oficio[0]) }}">
+                <div class="field input-field">
+                    <center><label for="assunto">Assunto:</label></center>
+                    <input type="text" id="assunto" name="assunto" value="{{ oficio[1] }}">
+                </div>
+
+                <div class="field input-field">
+                    <center><label for="destinatario">Destinatario:</label></center>
+                    <input type="text" id="destinatario" name="destinatario" value="{{ oficio[2] }}">
+                </div>
+
+                <div class="field input-field">
+                    <center><label for="remetente">Remetente:</label></center>
+                    <input type="text" id="remetente" name="remetente" value="{{ oficio[3] }}">
+                </div>
+
+                <div class="field input-field">
+                    <center><label for="data_emissao">Data de Emissão:</label></center>
+                    <input type="date" id="data_emissao" name="data_emissao" value="{{ oficio[4] }}">
+                    <div>
+
+                        <div class="field button-field">
+                            <button>Atualizar</button>
+
+                        </div>
+            </form>
+        </div>
+    </div>
+</section>
+</body>

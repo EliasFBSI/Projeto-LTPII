@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Editar Usuário</title>
+</head>
+<body>
+    <h1>Editar Usuário</h1>
+    <form method="POST" action="{{ url_for('atualizar_usuario', cpf=user[4]) }}">
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome" value="{{ cadastro[1] }}">
+        <br>
+        <label for="dn">Data de Nascimento:</label>
+        <input type="date" id="dn" name="dn" value="{{ cadastro[2] }}">
+        <br>
+        <label for="cargo">Cargo:</label>
+        <input type="text" id="cargo" name="cargo" value="{{ cadastro[3] }}">
+        <br>
+        <label for="cpf">CPF:</label>
+        <input type="text" id="cpf" name="cpf" value="{{ cadastro[4] }}">
+        <br>
+        <label for="sexo">Sexo:</label>
+        <input type="text" id="sexo" name="sexo" value="{{ cadastro[5] }}">
+        <br>
+        <label for="logradouro">Logradouro:</label>
+        <input type="text" id="logradouro" name="logradouro" value="{{ cadastro[6] }}">
+        <br>
+        <label for="cep">CEP:</label>
+        <input type="text" id="cep" name="cep" value="{{ cadastro[7] }}">
+        <br>
+        <label for="numero">Número:</label>
+        <input type="text" id="numero" name="numero" value="{{ cadastro[8] }}">
+        <br>
+        <label for="senha">Senha:</label>
+        <input type="password" id="senha" name="senha" value="{{ cadastro[9] }}">
+        <br>
+        <button type="submit">Atualizar</button>
+    </form>
+</body>
+</html>

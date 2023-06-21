@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SSA</title>
+
+    <!-- Importação dos arquivos CSS -->
+    <link rel="stylesheet" href="/static/css/reset.css">
+    <link rel="stylesheet" href="/static/css/style.css">
+
+    <!-- Boxicons CSS -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body>
+    <!-- Formulario Login -->
+    <section class="container forms">
+        <div class="form login">
+            <div class="form-content">
+                <div class="logo">
+                    <!-- Importando o logo SSA -->
+                    <img src="/static/css/SSA.png" alt="">
+                </div>
+                <!-- Seção de Cabeçalho -->
+                <header>Login</header>
+                <!-- Iniciando o formulário -->
+                <form method="POST" action="{{ url_for('login') }}">
+                    <div class="field input-field">
+                        <!-- Campo de entrada Email -->
+                         <input type="text" name="cpf" placeholder="CPF">
+                    </div>
+
+                    <div class="field input-field">
+                        <!-- Campo de entrada Senha-->
+                        <input type="password" placeholder="Senha" class="input" name="senha">
+                        <!-- Icone ocultar senha -->
+                        <i class='bx bx-hide eye-icon'></i>
+                    </div>
+
+                 <div>
+                     <!-- Mensagem de erro -->
+                   {% if error_message %}
+                     <p> {{ error_message }}</p>
+                   {% endif %}
+                 </div>
+
+                            <div class="field button-field">
+                        <!-- Campo Botão Cadastra-se -->
+                        <button type="submit">Entrar</button>
+                    </div>
+                    <div class="form-link">
+                        <!-- Link esqueceu senha -->
+                        <a href="#" class="forgot-pass">Esqueceu a Senha?</a>
+                    </div>
+
+
+                    <!-- Linha -->
+                    <div class="line"></div>
+                </form>
+
+                <div class="form-link">
+                    <!-- Link para fazer cadastro -->
+                    <span>Não tem uma conta? <a href="cadastrar" class="signup">Cadastre-se</a></span>
+                </div>
+            </div>
+
+        </div>
+    </section>
+</body>
+
+</html>

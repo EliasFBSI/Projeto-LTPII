@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consultar</title>
+
+    <!-- CSS -->
+    <!-- <link rel="stylesheet" href="/src/css/style.css"> -->
+    <link rel="stylesheet" href="/static/css/reset.css">
+    <link rel="stylesheet" href="/static/css/sidebar.css">
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="/static/css/usersofic.css">
+
+
+    <!-- Icons -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <title>Pesquisar Ofícios</title>
+</head>
+<body>
+
+
+
+
+
+
+
+
+    <nav id="menu">
+        <ul>
+            <li>
+                <a href="sidebar" class="ssa-logo">
+                    <img src="/static/css/SSA.png" alt="">
+                    <span class="nav-item">SSA</span>
+                </a>
+            </li>
+            <li><a href="#">
+                <i class='bx bx-home-alt-2'></i>
+                <span class="nav-item">Home</span>
+            </a></li>
+            <li><a href="/gerar_oficio">
+                <i class='bx bx-add-to-queue'></i>
+                <span class="nav-item">Gerar</span>
+            </a></li>
+            <li><a href="/search_oficios">
+                <i class='bx bx-search'></i>
+                <span class="nav-item">Consultar</span>
+            </a></li>
+            <li><a href=/ class="logout">
+                <i class='bx bx-log-out'></i>
+                <span class="nav-item">Sair</span>
+            </a></li>
+        </ul>
+    </nav>
+
+
+      <section class="container forms">
+           <div class="form login">
+            <div class="form-content">
+                <header>
+                <div class="logo">
+                    <img src="/static/css/SSA.png" alt="">
+                </div>
+               </header>
+                <center><h1>Pesquisar Ofícios</h1></center>
+                  <form method="POST" action="{{ url_for('search_oficios') }}">
+                      <div class="field input-field">
+                          <input type="text" placeholder="Termo de Pesquisa" class="input" name="termo_pesquisa">
+                      </div>
+
+
+                      <div class="field button-field">
+                          <button type="submit">Pesquisar</button>
+                      </div>
+
+                      <div class="line"></div>
+            </div>
+           </div>
+
+          </form>
+      </section>
+
+<main class="table">
+
+
+            <center><h1>Resultado da pesquisa</h1></center>
+
+
+        <section class="table_body">
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Assunto</th>
+                    <th>Destinatário</th>
+                    <th>Remetente</th>
+                    <th>Data de Emissão</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for oficio in oficios %}
+                <tr>
+                    <td>{{ oficio[0] }}</td>
+                    <td>{{ oficio[1] }}</td>
+                    <td>{{ oficio[2] }}</td>
+                    <td>{{ oficio[3] }}</td>
+                    <td>{{ oficio[4] }}</td>
+                    <td>
+                        <a href="{{ url_for('editar_oficio', id=oficio[0]) }}"><button class="field">Editar</button></a>
+                        <form method="POST" action="{{ url_for('excluir_oficio', id=oficio[0]) }}">
+                            <button class="field excluir">Excluir</button>
+                        </form>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </section>
+
+    {% if mensagem %}
+    <div class="mensagem">{{ mensagem }}</div>
+    {% endif %}
+</main>
+</body>
+</html>

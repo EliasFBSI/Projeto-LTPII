@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciamento de Usuários</title>
+
+    <link rel="stylesheet" href="/static/css/users.css">
+</head>
+
+<body>
+
+    <main class="table">
+        <section class="table_header">
+            <h1>Gerenciamento de Usuários</h1>
+
+        </section>
+        <section class="table_body">
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nome</th>
+                        <th>DN</th>
+                        <th>Cargo</th>
+                        <th>Cpf</th>
+                        <th>Sexo</th>
+                        <th>Logradouro</th>
+                        <th>CEP</th>
+                        <th>Numero</th>
+                        <th>Senha</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                {% for user in users %}
+                <tbody>
+                    <td>{{ user[0] }}</td>
+                    <td>{{ user[1] }}</td>
+                    <td>{{ user[2] }}</td>
+                    <td>{{ user[3] }}</td>
+                    <td>{{ user[4] }}</td>
+                    <td>{{ user[5] }}</td>
+                    <td>{{ user[6] }}</td>
+                    <td>{{ user[7] }}</td>
+                    <td>{{ user[8] }}</td>
+                    <td>{{ user[9] }}</td>
+                    <td>
+                        <a methods="POST" href="{{ url_for('atualizar_usuario', cpf=user[4]) }}"><button class="field">Editar</button></a>
+                        <a href="/excluir/{{ user.id }}"><button class="field excluir">Excluir</button></a>
+                    </td>
+                </tbody>
+                {% endfor %}
+
+            </table>
+            <a href="/cadastrar"><button class="field cadastrar">Cadastrar novo usuário</button></a>
+        </section>
+
+    </main>
+</body>
+
+</html>

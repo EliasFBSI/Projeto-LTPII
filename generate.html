@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerar</title>
+
+    <!-- CSS -->
+    <!-- <link rel="stylesheet" href="/src/css/style.css"> -->
+    <link rel="stylesheet" href="/static/css/reset.css">
+    <link rel="stylesheet" href="/static/css/sidebar.css">
+    <link rel="stylesheet" href="/static/css/style.css">
+
+    <!-- Icons -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <section class="home">
+        <header>
+        <div class="logo">
+                <img src="/static/css/SSA.png" alt="">
+        </div>
+        <!-- <div class="title">
+            <h1>GERADOR DE NÚMEROS DE OFÍCIOS</h1>
+        </div> -->
+
+        </header>
+    </section>
+    <nav id="menu">
+        <ul>
+            <li>
+                <a href="sidebar" class="ssa-logo">
+                    <img src="/static/css/SSA.png" alt="">
+                    <span class="nav-item">SSA</span>
+                </a>
+            </li>
+            <li><a href="sidebar">
+                <i class='bx bx-home-alt-2'></i>
+                <span class="nav-item">Home</span>
+            </a></li>
+            <li><a href="">
+                <i class='bx bx-add-to-queue'></i>
+                <span class="nav-item">Gerar</span>
+            </a></li>
+            <li><a href="search_oficios">
+                <i class='bx bx-search'></i>
+                <span class="nav-item">Consultar</span>
+            </a></li>
+            <li><a href="index" class="logout">
+                <i class='bx bx-log-out'></i>
+                <span class="nav-item">Sair</span>
+            </a></li>
+        </ul>
+    </nav>
+
+    <section class="container forms">
+        <div class="form login">
+            <div class="form-content">
+                <!-- Seção de Cabeçalho -->
+                <header>Gerador de numero de oficios</header>
+                <!-- Iniciando o formulário -->
+                <form method="POST" action="{{ url_for('gerar_oficio') }}">
+                    <div class="field input-field">
+                        <!-- Campo de entrada Email -->
+                        <input type="text" placeholder="Assunto" class="input" name="assunto">
+                    </div>
+
+                    <div class="field input-field">
+                        <!-- Campo de entrada Senha-->
+                        <input type="text" placeholder="Destinatario" class="password" name="destinatario">
+                    </div>
+
+                    <div class="field input-field">
+                        <!-- Campo de entrada Senha-->
+                        <input type="text" placeholder="Remetente" class="password" name="remetente">
+                    </div>
+
+                    <div class="field input-field">
+                        <!-- Campo de entrada Senha-->
+                        <input type="date" placeholder="Data de emissão" class="password" name="data_emissao">
+                    </div>
+
+                    <div class="field button-field">
+                        <!-- Campo Botão Entrar -->
+                        <button>Gerar</button>
+                        
+                    </div>
+                    <div class="field input-field">
+                    <!-- Exibir o número do ofício gerado -->
+                    <p>Número do Ofício: {{ numero_oficio }}</p>
+                    </div>
+                    <!-- Linha -->
+                    <div class="line"></div>
+                </form>
+            </div>
+
+        </div>
+    </section>
+</body>
+</html>
