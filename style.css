@@ -1,0 +1,145 @@
+/* Importando a fonte Google fonts - Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+*{
+    font-family: 'Poppins', sans-serif; /*Fonte*/
+}
+
+#container{
+    /* Definindo altura da pagina de cadastro */
+    height: 170vh;
+}
+/*Pagina*/
+.container{
+    height: 100vh; /*Altura da pagina de Login*/ 
+    width: 100%; /* Definindo a largura da pagina*/
+    display: flex; /*Define como um ítem será posicionado*/
+    align-items: center; /*Centralizar elementos Verticalmente*/
+    justify-content: center; /*Centralizar elementos Horizontalmente*/
+    /* background-color: #4070f4; */
+    background-color: #dfe9f5; /*Cor de fundo da Pagina*/
+}
+/*Formulario*/
+.form{
+    max-width: 430px; /*Definindo Largura maxima do formulario*/
+    width: 100%; /*Definindo a largura do formulario*/
+    padding: 30px; /*Distância entre o elemento e a borda*/
+    border-radius: 6px; /*Borda arredondada*/
+    background: #fff; /*Cor de fundo*/
+}
+
+
+.logo{
+    text-align: center; /*Centraliza a logo*/
+}
+
+.logo img{
+    width: 150px; /*Largura Logo*/
+    height: 100px; /*Altura Logo*/
+}
+/*Cabecalho*/
+header{
+    font-size: 28px; /*Tamanho da fonte cabeçalho*/
+    font-weight: 600; /*Peso da fonte*/
+    color: #232836; /*Cor do texto*/
+    text-align: center; /*Centraliza o texto*/
+}
+
+form{
+    margin-top: 30px; /*Distanciamento da Margem do topo*/
+}
+/*Estilizando os Campos de entrada*/
+.form .field{
+    position: relative; /*Posição relativa*/
+    height: 50px; /*Altura do campo de entrada*/
+    width: 100%; /*Largura*/
+    margin-top: 20px; /*Distanciamento da Margem do topo*/
+    border-radius: 6px; /*Borda arredondada*/
+}
+/*Campos de entrada e botões*/
+.field input,
+.field button{
+    height: 100%; /*Altura*/
+    width: 100%; /*Largura*/
+    font-size: 16px; /*Fonte*/
+    font-weight: 400; /*Peso da fonte*/
+    border-radius: 6px; /*Borda arredondada*/
+}
+/*Campo de entrada*/
+.field input{
+    outline: none; /*Remove o contorno*/
+    padding: 0 15px; /*Distância da borda de 15px da esquerda e direita*/
+    border: 1px solid #CACACA; /*Define a bordar e a cor*/
+}
+
+.field input:focus{
+    border-bottom-width: 2px; /*Adiciona uma borda quando o campo de entrada e selecionada*/
+}
+/*Icone ocultar senha*/
+.eye-icon{
+    position: absolute; /*Posiciona em relação ao elemento pai*/
+    top: 50%; /*Posicionamento vertical do topo*/
+    right: 10px; /*Posição horizontal direito*/
+    transform: translateY(-50%); /*move o elemento de sua posicao atual no eixo y*/
+    font-size: 18px; /*tamanho da fonte*/
+    color: #8b8b8b; /*Cor*/
+    cursor: pointer; /*Curso indica um link*/
+    padding: 5px; /*Distancia em relação a borda*/
+}
+/*Campo botão entrar*/
+.field button{
+    color: #fff; /*Cor*/
+    background-color: #0171d3; /*Cor de fundo*/
+    transition: all 0.3s ease; /*Efeito de transição ao passar o mouse sobre o botão*/
+    cursor: pointer; /*Cursor do mouse indica um link*/
+}
+
+.field button a{
+    display: block;
+    color: #fff;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.field button:hover{
+    background-color: #016dcb; /*Muda a cor do elemento ao passar o mouse sobre ele*/
+}
+/*Links*/
+.form-link{
+    text-align: center; /*Alinhar ao centro*/
+    margin-top: 10px; /*Distancia da margem no topo*/
+}
+
+.form-link span,
+.form-link a{
+    font-size: 14px; /*Tamanho da Fonte*/
+    font-weight: 400; /*Peso da fonte*/
+}
+
+.form a{
+    /* color: #0171d3; */
+    text-decoration: none; /*Remove o sublinhado do link*/
+}
+
+.form-content a:hover{
+    text-decoration: underline; /*Adiciona o sublinhado quando passa o mouse sobre o link*/
+}
+/*Linha*/
+.line{
+    position: relative; /*Posicão relativa a sua posição normal*/
+    height: 0.9px; /*Altura da linha*/
+    width: 100%; /*Largura da linha*/
+    margin: 20px 0; /*margem*/
+    background-color: #d4d4d4; /*cor de fundo*/
+}
+/*Define uma condição, Se o tamanho da tela for menor que 400px*/
+@media screen and (max-width: 400px) {
+    .form{
+        padding: 10px 15px; /*A distância em relação a borda sera de 10px verticalmente e 15px horizontalmente*/
+    }
+}
+
+/* MENU LATERAL DE NAVEGAÇÃO - SIDEBAR */
+
+
+
